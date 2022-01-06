@@ -1,0 +1,19 @@
+version: "3"
+services:
+  traefik:
+    image: "traefik"
+    ports:
+      - "80:80"
+      - "443:443" #Docker sends requests on port 443 to Traefik on port 443
+      - "8080:8080"
+    volumes:
+      - "/home/ubuntu/traefik/traefik.yml:/etc/traefik/traefik.yml"
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+  website:
+    image: example-image
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.blog.rule=Host(`example.com`)
+      - traefik.http.routers.blog.tls=true
+      - traefik.http.routers.blog.tls.certresolver=myresolver
+  
