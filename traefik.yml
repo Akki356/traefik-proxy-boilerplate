@@ -60,7 +60,7 @@ http:
         options: foo
 
   middlewares:
-    default:
+    secure-headers:
       headers:
         accessControlAllowMethods:
           - GET
