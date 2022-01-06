@@ -7,7 +7,7 @@ services:
       - "443:443" #Docker sends requests on port 443 to Traefik on port 443
       - "8080:8080"
     volumes:
-      - "/home/ubuntu/traefik/traefik.yml:/etc/traefik/traefik.yml"
+      - "/home/ubuntu/traefik-proxy-boilerplate/traefik.yml:/etc/traefik/traefik.yml"
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
   website:
     image: example-image
