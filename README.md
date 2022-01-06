@@ -1,5 +1,5 @@
 # traefik-poxy-boilerplate
-This repository contains code to help quickly set up traefik as reverse proxy using docker compose to host a website with ssl certificates using letsencrypt that auto renew. No more messing around with nginx, apache config or certbot etc.
+This repository contains code to help quickly set up traefik as reverse proxy using docker compose to host a website with ssl certificates using letsencrypt that auto renew. No more messing around with nginx, apache config or certbot etc. Hit letsencrypt api limits no problem this works with zerossl
 
 # Steps to get Started 
 
@@ -59,5 +59,22 @@ http:
       tls:
         options: foo
         
+ ```
+ 
+ ## Change acme to zero ssl
+ 
+ Signup for the free plan and generate the kid and hmacEncoded values in the developer section.
+ https://app.zerossl.com/developer
+ 
+ ```
+ certificatesResolvers:
+  myresolver:
+    acme:
+      email: email@example.com
+      storage: acme.json
+      caServer: "https://acme.zerossl.com/v2/DV90"
+      eab:
+        kid: jerlkqwejrlkjoij
+        hmacEncoded: hqwkjeqkwejr
  ```
 
