@@ -9,9 +9,9 @@ Installation instructions for Docker and Docker compose can be found here
 https://docs.docker.com/engine/install/
 https://docs.docker.com/compose/install/
 
-Also set DNS A records that point the pubic Ip of your instance that you will using to host this website.
+Also set DNS A records that point the pubic Ip of your instance that you will using to host the website.
 
-Assuming that you have a working docker image of the website, update the docker compose file.
+Assuming that you have a working docker image for the website, update the docker compose file.
 1. Update the image in the website section
 
 ``` 
