@@ -61,6 +61,13 @@ http:
         
  ```
  
+ Start the containers using the below command.
+ 
+ ```
+ docker-compose up -d
+ 
+ ```
+ 
  ## Change acme to zero ssl
  
  Signup for the free plan and generate the kid and hmacEncoded values in the developer section.
