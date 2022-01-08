@@ -10,7 +10,7 @@ services:
       - "/home/ubuntu/traefik-proxy-boilerplate/traefik.yml:/etc/traefik/traefik.yml"
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
   website:
-    image: example-image
+    image: example-image # Tip for testing you could you nginx image
     labels:
       - traefik.enable=true
       - traefik.http.routers.blog.rule=Host(`example.com`)
