@@ -1,5 +1,5 @@
 # traefik-proxy-boilerplate
-No more messing around with nginx, apache config or certbot etc. This repository contains code to help quickly set up traefik as reverse proxy using docker compose to host a website with ssl certificates using letsencrypt that auto renew. Hit letsencrypt api limits no problem this works with zerossl. 
+No more messing around with nginx, apache config or certbot etc. This repository contains code to help quickly set up traefik as reverse proxy using docker compose to host a website with SSL certificates using letsencrypt that auto renew. Hit letsencrypt api limits no problem this works with zerossl. 
 # Steps to get Started 
 
 It is assumed that you have created an cloud instance and installed docker and docker compose.
