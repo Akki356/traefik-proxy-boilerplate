@@ -3,13 +3,14 @@ No more messing around with nginx, apache config or certbot etc. Hit letsencrypt
 
 # Steps to get Started 
 
-It is assumed that you have install docker and docker compose.
+It is assumed that you have created an cloud instance and installed docker and docker compose.
 
 Installation instructions for Docker and Docker compose can be found here
 https://docs.docker.com/engine/install/
 https://docs.docker.com/compose/install/
 
-Also set DNS A records that point the pubic Ip of your instance that you will using to host the website.
+Next you will need to set DNS A records that point the pubic Ip of your instance that you will using to host the website.
+Also open port 80 and 443 in the security group of your instance that the instance is accessible from the internet.
 
 Assuming that you have a working docker image for the website, update the docker compose file.
 1. Update the image in the website section
