@@ -1,6 +1,8 @@
 # traefik-proxy-boilerplate
 No more messing around with nginx, apache config or certbot etc. This repository contains code to help quickly set up traefik as reverse proxy using docker compose to host a website with SSL certificates using letsencrypt that auto renew. Hit letsencrypt api limits no problem this works with zerossl. 
-# Steps to get Started 
+
+# Traefik + Docker compose
+## Steps to get Started 
 
 It is assumed that you have created an cloud instance and installed docker and docker compose.
 
@@ -8,7 +10,8 @@ Installation instructions for Docker and Docker compose can be found here
 https://docs.docker.com/engine/install/
 https://docs.docker.com/compose/install/
 
-Next you will need to set DNS A records that point the pubic Ip of your instance that you will using to host the website.
+Next you will need to set DNS A records that point to the Pubic IP of your instance that you will be using to host the website.
+More info on creating A record can be found here https://www.namecheap.com/support/knowledgebase/article.aspx/319/2237/how-can-i-set-up-an-a-address-record-for-my-domain/
 Also open port 80 and 443 in the security group of your instance that the instance is accessible from the internet.
 
 Assuming that you have a working docker image for the website, update the docker compose file.
@@ -84,4 +87,8 @@ http:
         kid: jerlkqwejrlkjoij
         hmacEncoded: hqwkjeqkwejr
  ```
+
+# Traefik + kind Kubernetes cluster
+
+
 
