@@ -119,7 +119,9 @@ http:
 
 # Traefik + kind Kubernetes cluster
 ![image](https://user-images.githubusercontent.com/11187601/148925681-c634498c-e139-481a-b091-267920e3a7f8.png)
-This guide assumes that you have limited computing resources and therefore we use kind to deploy a kubernetes cluster. If you have access to a fully functional kubernetes cluster, skip the kind installation and bootstraping steps.
+This guide assumes that you have limited computing resources and therefore we use kind to deploy a kubernetes cluster. If you have access to a fully functional kubernetes cluster, skip the kind installation and bootstraping steps. [start here ↓  ](#helm-installation)
+
+Note : To start with you will need to set DNS A records that point to the Pubic IP of your instance that you will be using to host the website. More info on creating A record can be found here https://www.namecheap.com/support/knowledgebase/article.aspx/319/2237/how-can-i-set-up-an-a-address-record-for-my-domain/ Also open port 80 and 443 in the security group of your instance that the instance is accessible from the internet.
 
 Let's first install kind, here is a link to quick start guide: https://kind.sigs.k8s.io/docs/user/quick-start/
 
@@ -128,7 +130,7 @@ Now that we have kind install lets create the kubernetes cluster
 kind create cluster --config=kubernetes/kind/kind.config.yaml
 ```
 
-Next step is to install helm
+## Helm installation
 The installation instructions can be found here https://helm.sh/docs/intro/install/
 below is a handly script published that can be found in the helm official docs
 ```
