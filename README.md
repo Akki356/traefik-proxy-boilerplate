@@ -119,7 +119,14 @@ http:
 
 # Traefik + kind Kubernetes cluster
 ![image](https://user-images.githubusercontent.com/11187601/148925681-c634498c-e139-481a-b091-267920e3a7f8.png)
+This guide assumes that you have limited computing resources and therefore we use kind to deploy a kubernetes cluster. If you have access to a fully functional kubernetes cluster, skip the kind installation and bootstraping steps.
 
+Let's first install kind, here is a link to quick start guide: https://kind.sigs.k8s.io/docs/user/quick-start/
+
+Now that we have kind install lets create the kubernetes cluster
+```
+kind create cluster --config=kubernetes/kind/kind.config.yaml
+```
 
 
 ![image](https://user-images.githubusercontent.com/11187601/148923223-3e5820d8-1dfd-4f2f-b06f-df869aef7d4c.png)
