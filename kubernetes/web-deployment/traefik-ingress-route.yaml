@@ -13,5 +13,13 @@ spec:
     services:
     - name: webservice
       port: 80
+    middlewares:
+      - name: security
   tls:
     certResolver: myresolver
+    options:
+      name: mytlsoption
+    domains:
+    - main: example.com
+      sans:
+      - '*.example.com'
