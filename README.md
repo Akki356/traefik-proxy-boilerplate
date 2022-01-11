@@ -89,8 +89,7 @@ http:
  ```
 
 # Traefik + kind Kubernetes cluster
-<img width="685" alt="Screen Shot 2022-01-11 at 8 47 27 pm" src="https://user-images.githubusercontent.com/11187601/148924425-b85a1464-e916-41f5-ba5a-a2b37fd0e21f.png">
-
+![image] (https://user-images.githubusercontent.com/11187601/148924584-b7dcc554-7f1a-422a-ba1b-754840c36d3d.png)
 
 
 ![image](https://user-images.githubusercontent.com/11187601/148923223-3e5820d8-1dfd-4f2f-b06f-df869aef7d4c.png)
