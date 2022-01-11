@@ -6,7 +6,7 @@ No more messing around with nginx, apache config or certbot etc. This repository
 
 # Directory structure
 
-The project is divided into 2 main sections, first section contains code docker compose config the second section contains code for kubernetes config yaml files.
+The project is divided into 2 main sections, first section contains code for docker compose config the second section contains code for kubernetes config yaml files.
 ```
 .
 ├── LICENSE
