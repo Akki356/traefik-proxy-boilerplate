@@ -128,6 +128,30 @@ Now that we have kind install lets create the kubernetes cluster
 kind create cluster --config=kubernetes/kind/kind.config.yaml
 ```
 
+Next step is to install helm
+The installation instructions can be found here https://helm.sh/docs/intro/install/
+below is a handly script published that can be found in the helm official docs
+```
+curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+chmod 700 get_helm.sh
+./get_helm.sh
+```
+
+Now lets install traefik using  helm
+```
+helm install traefik traefik/traefik -n traefik --create-namespace -f kubernetes/traefik/helm/traefik.values.yaml
+```
+
+Next step is to configure traefik TLS Options and middleware
+```
+kubectl apply -f kubernetes/traefik/
+```
+
+Now lets create a sample kubernetes deployment and create a ingress route for it
+```
+kubectl apply -f kubernetes/web-deployment/
+```
+
 
 ![image](https://user-images.githubusercontent.com/11187601/148923223-3e5820d8-1dfd-4f2f-b06f-df869aef7d4c.png)
 
