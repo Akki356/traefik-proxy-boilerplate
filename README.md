@@ -1,7 +1,36 @@
 # traefik-proxy-boilerplate
-No more messing around with nginx, apache config or certbot etc. This repository contains code to help quickly set up traefik as reverse proxy using docker compose to host a website with SSL certificates using letsencrypt that auto renew. Hit letsencrypt api limits no problem this works with zerossl. 
+No more messing around with nginx, apache config or certbot etc. This repository contains code to help quickly set up traefik as reverse proxy using docker compose or kubernetes cluster to host a website with SSL certificates using letsencrypt that auto renew. Hit letsencrypt api limits no problem this works with zerossl. 
 
 # Traefik + Docker compose
+![image](https://user-images.githubusercontent.com/11187601/148925399-2de1e90c-3e5d-4fe8-b46b-bd30c2cb3521.png)
+
+# Directory structure
+
+The project is divided into 2 main sections, first section contains code docker compose config the second section contains code for kubernetes config yaml files.
+```
+.
+├── LICENSE
+├── README.md
+├── docker                             # Docker Compose config
+│   ├── docker-compose.yml
+│   └── traefik.yml
+└── kubernetes                         # Kubernetes config
+    ├── kind                        
+    │   └── kind.config.yaml           # Kind cluster config
+    ├── metal-lb
+    │   └── metallb-configmap.yaml     # metallb config (optional)
+    ├── traefik                     
+    │   ├── helm                    
+    │   │   └── traefik.values.yaml    # Values to initialise helm chart
+    │   ├── TLSoptions.yaml            # Traefik CRD TLSoptions config
+    │   ├── middleware.yaml            # Traefik CRD middleware config
+    │   └── traefik
+    └── web-deployment
+        ├── nginx-deployment.yaml      #
+        ├── nginx-service.yaml.        #
+        └── traefik-ingress-route.yaml #
+```
+
 ## Steps to get Started 
 
 It is assumed that you have created an cloud instance and installed docker and docker compose.
@@ -89,6 +118,11 @@ http:
  ```
 
 # Traefik + kind Kubernetes cluster
+![image](https://user-images.githubusercontent.com/11187601/148925681-c634498c-e139-481a-b091-267920e3a7f8.png)
+
+
+
+![image](https://user-images.githubusercontent.com/11187601/148923223-3e5820d8-1dfd-4f2f-b06f-df869aef7d4c.png)
 
 
 
