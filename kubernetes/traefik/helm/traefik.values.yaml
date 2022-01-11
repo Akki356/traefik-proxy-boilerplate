@@ -21,7 +21,8 @@ ports:
 additionalArguments:
   - --entrypoints.web.http.redirections.entryPoint.to=websecure
   - --entrypoints.web.http.redirections.entryPoint.scheme=https
-  - --certificatesresolvers.myresolver.acme.email=akshayshipurkar@gmail.com
+  # Update the email below
+  - --certificatesresolvers.myresolver.acme.email=email@example.com
   - --certificatesresolvers.myresolver.acme.storage=/data/acme.json
   - --certificatesresolvers.myresolver.acme.caserver=https://acme-staging-v02.api.letsencrypt.org/directory
   - --certificatesresolvers.myresolver.acme.preferredchain="ISRG Root X1"
@@ -32,6 +33,7 @@ additionalArguments:
   - --certificatesresolvers.myresolver.acme.dnschallenge.delaybeforecheck=0
   - --certificatesresolvers.myresolver.acme.dnschallenge=true
   - --certificatesresolvers.myresolver.acme.dnschallenge.resolvers=1.1.1.1:53,8.8.8.8:53
+
 
 env: 
   - name: DESEC_TOKEN
