@@ -1,0 +1,44 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: simpleingressroute
+  namespace: default
+spec:
+  entryPoints:
+    - web
+    - websecure
+  routes:
+  - match: Host(`aplayground.ml`) 
+    kind: Rule
+    services:
+    - name: my-service
+      port: 80
+    middlewares:
+      - name: security
+  tls:
+    certResolver: myresolver
+    options:
+      name: mytlsoption
+    domains:
+    - main: aplayground.ml
+      sans:
+      - '*.aplayground.ml'
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: monitoringingressroute
+  namespace: monitoring
+spec:
+  entryPoints:
+    - web
+    - websecure
+  routes:
+  - match: Host(`grafana.aplayground.ml`) 
+    kind: Rule
+    services:
+    - name: grafana
+      port: 3000
+  tls:
+    certResolver: myresolver
+
