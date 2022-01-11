@@ -26,9 +26,9 @@ The project is divided into 2 main sections, first section contains code docker 
     │   ├── middleware.yaml            # Traefik CRD middleware config
     │   └── traefik
     └── web-deployment
-        ├── nginx-deployment.yaml      #
-        ├── nginx-service.yaml.        #
-        └── traefik-ingress-route.yaml #
+        ├── nginx-deployment.yaml      # Sample web deployment
+        ├── nginx-service.yaml.        # Sample web service
+        └── traefik-ingress-route.yaml # Treafik ingress route to webservice
 ```
 
 ## Steps to get Started 
